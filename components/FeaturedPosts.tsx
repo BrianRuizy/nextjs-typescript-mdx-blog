@@ -1,6 +1,6 @@
 // featured posts
-
 import React from 'react';
+import Image from 'next/image';
 
 
 const callouts = [
@@ -29,32 +29,31 @@ const callouts = [
 
 const FeaturedPosts = (): JSX.Element => {
   return (
-
-      <div>
-        <h2 className="text-slate-900 text-2xl tracking-tight font-bold dark:text-slate-200">Featured Posts</h2>
-
-        <div className="mt-4 md:container md:max-w-6xl md:mx-auto relative flex flex-nowrap overflow-x-scroll snap-x snap-mandatory scroll-pl-4 md:overflow-auto md:grid grid-cols-3 gap-4">
-          {callouts.map((callout) => (
-            <div key={callout.name} className="relative snap-start min-w-[80%] md:min-w-[100%]">
-              <div className="relative overflow-hidden aspect-square rounded-lg">
-                <img
-                  src={callout.imageSrc}
-                  alt={callout.imageAlt}
-                  className="h-full w-full object-cover object-center"
-                />
-              </div>
-              <h3 className="mt-6 text-sm text-gray-500">
-                <a href={callout.href}>
-                  <span className="absolute inset-0" />
-                  {callout.name}
-                </a>
-              </h3>
-              <p className="text-base font-semibold text-gray-900">{callout.description}</p>
+    <section>
+      <h2 className="text-slate-900 text-2xl tracking-tight font-bold dark:text-slate-200">Featured Posts</h2>
+      <div className="mt-4 md:container md:max-w-6xl md:mx-auto relative flex flex-nowrap overflow-x-scroll snap-x snap-mandatory scroll-pl-4 md:overflow-auto md:grid grid-cols-3 gap-4">
+        {callouts.map((callout) => (
+          <div
+            key={callout.name}
+            className="snap-start flex flex-col min-w-[70%] md:min-w-[100%] col-span-1 overflow-hidden will-change-transform gap-4"
+          >
+            <div className="relative overflow-hidden aspect-square rounded-xl will-change-transform ">
+              <Image
+                layout='fill'
+                src={callout.imageSrc}
+                alt={callout.imageAlt}
+                priority={true}
+                className="z-0 object-cover object-center absolute w-full h-full hover:scale-105 transition-all duration-1000 ease-in-out"
+              />
             </div>
-          ))}
-        </div>
+            <div className="flex flex-col gap-1 ">
+              <h2 className="text-lg md:text-xl leading-tight font-bold text-black dark:text-white line-clamp-2">{callout.name}</h2>
+              <p className="text-slate-400 text-sm line-clamp-2 pb-1">{callout.description}</p>
+            </div>
+          </div>
+        ))}
       </div>
-
+    </section>
   );
 };
 
