@@ -14,6 +14,7 @@ import rehypePrism from 'rehype-prism-plus';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 import Layout, { WEBSITE_HOST_URL } from '../../components/Layout';
+import Container from '../../components/Container';
 import { MetaProps } from '../../types/layout';
 import { PostType } from '../../types/post';
 import { postFilePaths, POSTS_PATH } from '../../utils/mdxUtils';
@@ -43,6 +44,8 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
   };
   return (
     <Layout customMeta={customMeta}>
+      <Container>
+
       <article>
         <h1 className="mb-3 text-gray-900 dark:text-white">
           {frontMatter.title}
@@ -54,6 +57,8 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
           <MDXRemote {...source} components={components} />
         </div>
       </article>
+      </Container>
+
     </Layout>
   );
 };
