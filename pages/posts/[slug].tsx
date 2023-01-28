@@ -47,10 +47,10 @@ const PostPage = ({ source, frontMatter }: PostPageProps): JSX.Element => {
       <Container>
 
       <article>
-        <h1 className="mb-3 text-gray-900 dark:text-white">
+        <h1 className="mb-3 text-slate-900 dark:text-white">
           {frontMatter.title}
         </h1>
-        <p className="mb-10 text-sm text-gray-500 dark:text-gray-400">
+        <p className="mb-10 text-sm text-slate-500 dark:text-slate-400">
           {format(parseISO(frontMatter.date), 'MMMM dd, yyyy')}
         </p>
         <div className="prose dark:prose-dark">

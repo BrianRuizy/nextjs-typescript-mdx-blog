@@ -14,7 +14,7 @@ export const WEBSITE_HOST_URL = 'https://nextjs-typescript-mdx-blog.vercel.app';
 const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
   return (
     <>
-      {/* <TopSVG /> */}
+      <TopSVG />
       <Head customMeta={customMeta} />
       <Navigation />
 
@@ -73,7 +73,7 @@ const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
           </div>
         </div>
       </div>
-      {/* <BottomSVG /> */}
+      <BottomSVG />
     </>
   );
 };

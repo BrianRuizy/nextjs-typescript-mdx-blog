@@ -8,7 +8,7 @@ import ThemeSwitch from './ThemeSwitch';
 const ActiveLink = ({ href, label }) => {
   return (
     <Link href={href}>
-      <a className="font-medium text-gray-900 dark:text-gray-200  md:inline-block p-1 sm:px-3 sm:py-1.5 rounded-lg hover:bg-gray-200 hover:text-inherit dark:hover:bg-gray-800 transition-all">
+      <a className="font-medium text-slate-900 dark:text-slate-200  md:inline-block p-1 sm:px-3 sm:py-1.5 rounded-lg hover:bg-slate-200 hover:text-inherit dark:hover:bg-slate-800 transition-all">
         {label}
       </a>
     </Link>
@@ -18,7 +18,7 @@ const ActiveLink = ({ href, label }) => {
 const RegularLink = ({ href, label }) => {
   return (
     <Link href={href}>
-      <a className="font-normal text-gray-500 dark:text-gray-400  md:inline-block p-1 sm:px-3 sm:py-1.5 rounded-lg hover:bg-gray-200 hover:text-inherit dark:hover:bg-gray-800 transition-all">
+      <a className="font-normal text-slate-500 dark:text-slate-400  md:inline-block p-1 sm:px-3 sm:py-1.5 rounded-lg hover:bg-slate-200 hover:text-inherit dark:hover:bg-slate-800 transition-all">
         {label}
       </a>
     </Link>
@@ -38,7 +38,7 @@ const Navigation = (): JSX.Element => {
   ];
 
   return (
-    <nav className="py-2 border-b border-slate-900/10 dark:border-slate-300/10">
+    <nav className="sticky top-0 z-10 py-2 border-b border-slate-900/10 dark:border-slate-300/10 backdrop-blur-sm">
       <div className="container mx-auto max-w-7xl px-4 lg:px-8">
         <div className="flex items-center justify-between">
           <div className="flex items-center justify-between gap-1 md:gap-0 md:first:-ml-3">
