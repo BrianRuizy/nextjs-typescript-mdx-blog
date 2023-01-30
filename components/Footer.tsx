@@ -3,7 +3,7 @@ import { FaGithub, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 
 const Footer = (): JSX.Element => {
   return (
-    <Container>
+    <Container className='pb-20'>
       <hr className="w-100 divide my-4 border-slate-900/10 dark:border-slate-300/10"></hr>
       <footer className="mt-4 pb-12 flex justify-between">
         <p className="text-sm leading-6 text-slate-500">

@@ -28,11 +28,10 @@ const Header = ({
             <h1 className="text-4xl font-bold tracking-tight">{title}</h1>
           </div>
           <div
-            className="rounded-full w-9 h-9 md:w-12 md:h-12 bg-cover bg-center bg-slate-100 dark:bg-slate-700"
+            className="rounded-full w-10 h-10  bg-cover bg-center bg-slate-100 dark:bg-slate-700"
             style={{ backgroundImage: 'url(images/portrait.png)' }}
           ></div>
         </div>
-
         <hr className="divide mt-2 border-slate-900/10 dark:border-slate-300/10"></hr>
       </header>
     </Container>

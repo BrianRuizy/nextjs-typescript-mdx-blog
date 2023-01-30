@@ -35,27 +35,26 @@ const callouts = [
 
 const FeaturedPosts = (): JSX.Element => {
   return (
-    <section className="flex flex-col gap-3 lg:gap-6">
+    <section className="flex flex-col gap-4">
       <Container>
-        <h2 className="text-2xl md:text-3xl tracking-tight font-bold text-slate-900 dark:text-slate-100">
-          Featured Posts
+        <h2 className="text-2xl lg:text-3xl tracking-tight font-bold text-slate-900 dark:text-slate-100">
+          Featured
         </h2>
       </Container>
       <Container>
         <p className="text-base text-slate-500 dark:text-slate-400">
-          Here you&apos;ll find a selection of my most popular articles on
-          the latest trends and techniques in the field. These posts are
-          designed to provide valuable insights and tips for developers of all
-          levels.
+          Here you&apos;ll find a selection of my most popular articles on the
+          latest trends and techniques in the field. Designed to provide
+          valuable insights and tips for developers of all levels.
         </p>
       </Container>
-      <div className="mt-4 md:container md:max-w-2xl md:mx-auto px-4 xl:px-0 relative flex flex-nowrap overflow-x-scroll snap-x snap-mandatory scroll-pl-4 md:overflow-auto md:grid grid-cols-3 gap-4">
+      <div className="mt-4 lg:container lg:max-w-xl lg:mx-auto px-4 lg:px-0 lg:mr-8  relative flex flex-nowrap overflow-x-scroll snap-x snap-mandatory scroll-pl-4 md:overflow-auto md:grid grid-cols-3 gap-4">
         {callouts.map((callout) => (
           <div
             key={callout.name}
-            className="snap-start flex flex-col min-w-[70%] md:min-w-[100%] col-span-1 overflow-hidden will-change-transform gap-3"
+            className="snap-start flex flex-col min-w-[70%] lg:min-w-[100%] col-span-1 overflow-hidden will-change-transform gap-3"
           >
-            <div className="relative overflow-hidden aspect-square rounded-xl will-change-transform border border-slate-900/5 dark:border-slate-100/5">
+            <div className="relative overflow-hidden aspect-square rounded-lg will-change-transform border border-slate-900/5 dark:border-slate-100/5">
               <Image
                 layout="fill"
                 src={callout.imageSrc}

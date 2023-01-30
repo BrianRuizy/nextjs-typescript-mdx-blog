@@ -8,7 +8,7 @@ import Container from './Container';
 const YoutubePosts = ({ posts }) => {
   return (
     <Container>
-      <section className="flex flex-col gap-3 lg:gap-6">
+      <section className="flex flex-col gap-4">
         <div className="flex items-center gap-2">
           <Image
             src="/images/youtube-icon.png"
@@ -17,7 +17,7 @@ const YoutubePosts = ({ posts }) => {
             alt="youtube icon"
           />
 
-          <h2 className="text-3xl md:text-3xl tracking-tight font-bold text-slate-900 dark:text-slate-100">
+          <h2 className="text-2xl lg:text-3xl tracking-tight font-bold text-slate-900 dark:text-slate-100">
             YouTube
           </h2>
         </div>
@@ -33,7 +33,7 @@ const YoutubePosts = ({ posts }) => {
         >
           {posts.map((post, index) => (
             <article key={post.slug} className="flex gap-4 items-center py-3">
-              <p className="text-slate-500 dark:text-slate-400">{index}</p>
+              <p className="hidden lg:block text-slate-500 dark:text-slate-400">{index}</p>
               <h1 className="text-lg font-medium">
                 <Link as={`/posts/${post.slug}`} href={`/posts/[slug]`}>
                   <a className="text-slate-900 dark:text-slate-200">

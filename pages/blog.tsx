@@ -11,7 +11,7 @@ export const Blog = (): JSX.Element => {
     >
       <Header
         title="Blog"
-        description={'Welcome to the Blog page!'}
+        description={'All posts'}
       />
     </Layout>
   );

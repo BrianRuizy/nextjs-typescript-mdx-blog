@@ -11,7 +11,7 @@ export const Gear = (): JSX.Element => {
     >
       <Header
         title="Gear"
-        description={'This is a curated lists of things I use and love.'}
+        description={'Curated tech'}
       />
     </Layout>
   );

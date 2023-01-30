@@ -11,16 +11,15 @@ export const Contact = (): JSX.Element => {
       }}
     >
       <Header title="Contact" description={'Reach out anytime!'} />
-      <Container className="flex flex-col gap-8 md:gap-12">
-        <p className="text-base text-slate-500 dark:text-slate-400">
+      <Container className="flex flex-col gap-8 lg:gap-12">
+        <p className="text-lg text-slate-700 dark:text-slate-400">
           Whether you have a question about my work, a suggestion for a new
-          article or video topic, or just want to say hello and chat, — don&apos;t
+          article or video topic, or just want to say hello, — don&apos;t
           hesitate — I&apos;d love to hear from you! I aim to respond to all
-          inquiries in a timely manner, and I look forward to connecting with
-          you soon.
+          messages in a timely manner. Looking forward to connecting.
         </p>
         <div className="grid grid-cols-2 gap-6">
-          <div className="col-span-2 md:col-span-1">
+          <div className="col-span-2 lg:col-span-1">
             <label
               htmlFor="email"
               className="block mb-2 text-lg font-medium text-slate-900 dark:text-white"
@@ -36,7 +35,7 @@ export const Contact = (): JSX.Element => {
             />
           </div>
 
-          <div className="col-span-2 md:col-span-1">
+          <div className="col-span-2 lg:col-span-1">
             <label
               htmlFor="email"
               className="block mb-2 text-lg font-medium text-slate-900 dark:text-white"

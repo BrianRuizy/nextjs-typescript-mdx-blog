@@ -1,106 +1,67 @@
 import { useTheme } from 'next-themes';
 import React from 'react';
 
-/**
- * Based off of gatsby-theme-novela
- * https://github.com/narative/gatsby-theme-novela/blob/master/%40narative/gatsby-theme-novela/src/components/Navigation/Navigation.Header.tsx
- */
 
 const ThemeSwitch = (): JSX.Element => {
   const [mounted, setMounted] = React.useState(false);
   const { theme, setTheme } = useTheme();
 
-  // After mounting, we have access to the theme
   React.useEffect(() => setMounted(true), []);
 
   if (!mounted) {
     return null;
   }
 
-  const isDark = theme === 'dark';
-  const color = isDark ? '#fff' : '#000';
-  const maskColor = isDark ? '#000' : '#fff';
+
+
   return (
     <button
-      className="theme-button"
       type="button"
       aria-label="Toggle Dark Mode"
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+      className="bg-wite dark:bg-slate-900 hidden w-full lg:flex items-center text-sm leading-6 text-slate-600 dark:text-slate-400 rounded-md   py-1.5 pl-2 pr-3 border border-slate-200 dark:border-slate-800"
     >
-      <div className="moon-or-sun" />
-      <div className="moon-mask" />
-      {/* eslint-disable-next-line react/no-unknown-property */}
-      <style jsx>{`
-        .theme-button {
-          opacity: 0.5;
-          position: relative;
-          border-radius: 5px;
-          width: 42px;
-          height: 42px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transition: opacity 0.3s ease;
-        }
-        .theme-button:hover {
-          opacity: 1;
-        }
-        .moon-or-sun {
-          position: relative;
-          width: 20px;
-          height: 20px;
-          border-radius: 50%;
-          border: ${isDark ? '4px' : '2px'} solid;
-          border-color: ${color};
-          background: ${color};
-          transform: scale(${isDark ? 0.5 : 1});
-          transition: all 0.45s ease;
-          overflow: ${isDark ? 'visible' : 'hidden'};
-        }
-        .moon-or-sun::before {
-          content: '';
-          position: absolute;
-          right: -9px;
-          top: -9px;
-          height: 20px;
-          width: 20px;
-          border: 2px solid;
-          border-color: ${color};
-          border-radius: 50%;
-          transform: translate(${isDark ? '14px, -14px' : '0, 0'});
-          opacity: ${isDark ? 0 : 1};
-          transition: transform 0.45s ease;
-        }
-        .moon-or-sun::after {
-          content: '';
-          width: 8px;
-          height: 8px;
-          border-radius: 50%;
-          margin: -4px 0 0 -4px;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          box-shadow: 0 -23px 0 ${color}, 0 23px 0 ${color}, 23px 0 0 ${color},
-            -23px 0 0 ${color}, 15px 15px 0 ${color}, -15px 15px 0 ${color},
-            15px -15px 0 ${color}, -15px -15px 0 ${color};
-          transform: scale(${isDark ? 1 : 0});
-          transition: all 0.35s ease;
-        }
-        .moon-mask {
-          position: absolute;
-          right: 4px;
-          top: 4px;
-          height: 20px;
-          width: 20px;
-          border-radius: 50%;
-          border: 0;
-          background: ${maskColor};
-          transform: translate(${isDark ? '4px, -4px' : '0, 0'});
-          opacity: ${isDark ? 0 : 1};
-          transition: transform 0.45s ease;
-        }
-      `}</style>
+      {theme === 'dark' ? (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          className="w-5 h-5 mr-3 "
+        >
+          <path
+            fillRule="evenodd"
+            d="M7.455 2.004a.75.75 0 01.26.77 7 7 0 009.958 7.967.75.75 0 011.067.853A8.5 8.5 0 116.647 1.921a.75.75 0 01.808.083z"
+            clipRule="evenodd"
+          />
+        </svg>
+      ) : (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          className="w-5 h-5 mr-3 "
+        >
+          <path d="M10 2a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 0110 2zM10 15a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 0110 15zM10 7a3 3 0 100 6 3 3 0 000-6zM15.657 5.404a.75.75 0 10-1.06-1.06l-1.061 1.06a.75.75 0 001.06 1.06l1.06-1.06zM6.464 14.596a.75.75 0 10-1.06-1.06l-1.06 1.06a.75.75 0 001.06 1.06l1.06-1.06zM18 10a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0118 10zM5 10a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 015 10zM14.596 15.657a.75.75 0 001.06-1.06l-1.06-1.061a.75.75 0 10-1.06 1.06l1.06 1.06zM5.404 6.464a.75.75 0 001.06-1.06l-1.06-1.06a.75.75 0 10-1.061 1.06l1.06 1.06z" />
+        </svg>
+      )}
+
+      {theme}
+      <span className="ml-auto ">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          className="w-5 h-5"
+        >
+          <path
+            fillRule="evenodd"
+            d="M10 3a.75.75 0 01.55.24l3.25 3.5a.75.75 0 11-1.1 1.02L10 4.852 7.3 7.76a.75.75 0 01-1.1-1.02l3.25-3.5A.75.75 0 0110 3zm-3.76 9.2a.75.75 0 011.06.04l2.7 2.908 2.7-2.908a.75.75 0 111.1 1.02l-3.25 3.5a.75.75 0 01-1.1 0l-3.25-3.5a.75.75 0 01.04-1.06z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </span>
     </button>
+
   );
 };
 
