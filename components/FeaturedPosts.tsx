@@ -43,12 +43,11 @@ const FeaturedPosts = (): JSX.Element => {
       </Container>
       <Container>
         <p className="text-base text-slate-500 dark:text-slate-400">
-          Here you&apos;ll find a selection of my most popular articles on the
-          latest trends and techniques in the field. Designed to provide
-          valuable insights and tips for developers of all levels.
+          Here you&apos;ll find my pinned posts. A selection of quality articles
+          Written to provide valuable insights and tips for readers of all levels.
         </p>
       </Container>
-      <div className="mt-4 lg:container lg:max-w-xl lg:mx-auto px-4 lg:px-0 lg:mr-8  relative flex flex-nowrap overflow-x-scroll snap-x snap-mandatory scroll-pl-4 md:overflow-auto md:grid grid-cols-3 gap-4">
+      <div className="mt-4 md:container md:max-w-xl md:mx-auto px-4 md:px-0 relative flex flex-nowrap overflow-x-scroll snap-x snap-mandatory scroll-pl-4 md:overflow-auto md:grid grid-cols-3 gap-4">
         {callouts.map((callout) => (
           <div
             key={callout.name}

@@ -23,9 +23,8 @@ const YoutubePosts = ({ posts }) => {
         </div>
         <p className="text-base text-slate-500 dark:text-slate-400">
           Recently, I&apos;ve ventured into the content creation space and I am
-          excited to share my knowledge and experience with a wider audience.
-          Here you&apos;ll find a collection of my high-quality and informative
-          videos on a wide range of topics related to technology.
+          excited to share my experiences with a wider audience.
+          Here&apos;s a list of my most recent videos!
         </p>
         <div
           id="posts"

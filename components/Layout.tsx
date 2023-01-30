@@ -87,12 +87,11 @@ const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
     <>
       {/* <TopSVG /> */}
       <Head customMeta={customMeta} />
-      {/* <Navigation /> */}
-
-      <div className="container lg:flex mx-auto justify-center gap-12 pt-6 lg:pt-20">
-        <div className="hidden lg:block w-48 ml-8">
+      <Navigation />
+      <div className="container lg:flex mx-auto justify-center gap-12 pt-6 lg:pt-20 lg:mx-8">
+        <div className="hidden lg:block w-44">
           <div className="flex flex-col gap-8">
-            <div className="text-slate-900 dark:text-slate-100 flex items-center ">
+            <div className="text-slate-900 dark:text-slate-100 flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="30"
@@ -122,7 +121,6 @@ const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
                 v0.1
               </p>
             </div>
-          
             <div className="flex flex-col gap-4">
               <ThemeSwitch />
               
@@ -180,7 +178,6 @@ const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
           <main className="flex flex-col gap-12">{children}</main>
           <Footer />
         </div>
-        <div className="hidden lg:block w-48 mr-8 gap-8"></div>
       </div>
       {/* <BottomSVG /> */}
     </>

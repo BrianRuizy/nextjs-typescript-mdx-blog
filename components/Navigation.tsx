@@ -73,68 +73,30 @@ const Navigation = (): JSX.Element => {
   ];
 
   return (
-    <>
-      <nav className="relative lg:sticky top-0 z-10 border-b border-slate-900/10 dark:border-slate-300/10 bg-white/50 dark:bg-slate-900/50 backdrop-blur-lg">
-        <div className="container mx-auto max-w-5xl px-4 lg:px-8">
-          <div className="flex items-center justify-between h-[60px] ">
- 
-            <div className="hidden lg:flex items-center justify-between gap-4 lg:first:-ml-3">
-              {links.map((link) => {
-                return path === link.href ? (
-                  <ActiveLink
-                    key={link.href}
-                    href={link.href}
-                    label={link.label}
-                  />
-                ) : (
-                  <RegularLink
-                    key={link.href}
-                    href={link.href}
-                    label={link.label}
-                  />
-                );
-              })}
-            </div>
-            <div className="flex items-center gap-2">
-              {/* <ThemeSwitch /> */}
-              {/* github logo with link to repo */}
-              <a
-                href="github.com/brianruizy"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaGithub className="text-xl text-slate-500" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </nav>
-      <nav className='lg:hidden fixed bottom-0 z-40 bg-white/50 dark:bg-slate-900/50 backdrop-blur-lg h-16 px-6 py-2 w-full'>
-        <Container>
-          {/* bottom nav with 4 links Home, Blog, Contact, Gear */}
-          <div
-            className="flex items-center justify-between"
-            style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
-          >
-            {links.map((link, index) => {
-              return (
-                <Link key={index} href={link.href}>
-                  <div className="flex flex-col items-center">
-                    <div className="text-slate-600 dark:text-slate-400">
-                      {link.icon}
-                    </div>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">
-                      {link.label}
-                    </p>
+    <nav className='lg:hidden fixed bottom-0 z-40 bg-white/50 dark:bg-slate-900/50 backdrop-blur-lg h-16 px-6 py-2 w-full'>
+      <Container>
+        {/* bottom nav with 4 links Home, Blog, Contact, Gear */}
+        <div
+          className="flex items-center justify-between"
+          style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
+        >
+          {links.map((link, index) => {
+            return (
+              <Link key={index} href={link.href}>
+                <div className="flex flex-col items-center">
+                  <div className="text-slate-600 dark:text-slate-400">
+                    {link.icon}
                   </div>
-                </Link>
-              );
-            })}
-          </div>
-        </Container>
-      </nav>
-
-    </>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">
+                    {link.label}
+                  </p>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </Container>
+    </nav>
   );
 };
 
