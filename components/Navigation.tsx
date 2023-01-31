@@ -1,36 +1,10 @@
 import Link from 'next/link';
 import React from 'react';
-
 import Container from './Container';
-// import ThemeSwitch from './ThemeSwitch';
-import { FaGithub } from 'react-icons/fa';
 
-// create component for active link
-const ActiveLink = ({ href, label }) => {
-  return (
-    <Link href={href}>
-      <a className="font-medium text-slate-900 dark:text-slate-200  lg:inline-block hover:text-indigo-500 transition-all">
-        {label}
-      </a>
-    </Link>
-  );
-};
-
-const RegularLink = ({ href, label }) => {
-  return (
-    <Link href={href}>
-      <a className="font-normal text-slate-500 dark:text-slate-400  lg:inline-block hover:text-indigo-500 transition-all">
-        {label}
-      </a>
-    </Link>
-  );
-};
 
 const Navigation = (): JSX.Element => {
-  // get path to use for active link styling
-  const path = typeof window !== 'undefined' ? window.location.pathname : '';
 
-  // define all links Home, About, Blog, Contact, Gear
   const links = [
     {
       href: '/',
@@ -73,9 +47,8 @@ const Navigation = (): JSX.Element => {
   ];
 
   return (
-    <nav className='lg:hidden fixed bottom-0 z-40 bg-white/50 dark:bg-slate-900/50 backdrop-blur-lg h-16 px-6 py-2 w-full'>
+    <nav className='lg:hidden fixed bottom-0 z-40 bg-white/75 dark:bg-neutral-900/50 backdrop-blur-xl h-16 px-6 py-2 w-full'>
       <Container>
-        {/* bottom nav with 4 links Home, Blog, Contact, Gear */}
         <div
           className="flex items-center justify-between"
           style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
@@ -84,10 +57,10 @@ const Navigation = (): JSX.Element => {
             return (
               <Link key={index} href={link.href}>
                 <div className="flex flex-col items-center">
-                  <div className="text-slate-600 dark:text-slate-400">
+                  <div className="text-neutral-600 dark:text-neutral-400">
                     {link.icon}
                   </div>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400">
                     {link.label}
                   </p>
                 </div>

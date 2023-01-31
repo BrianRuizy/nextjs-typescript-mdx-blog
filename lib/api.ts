@@ -32,6 +32,29 @@ export function getPostBySlug(slug: string, fields: string[] = []): PostItems {
     }
   });
 
+  // // format date, and if date is less than a month ago show "x days ago"
+  // const date = new Date(items.date);
+  // const now = new Date();
+  // const diff = Math.abs(now.getTime() - date.getTime());
+  // const diffDays = Math.ceil(diff / (1000 * 3600 * 24));
+
+  // if (diffDays < 14) {
+  //   items.date = `${diffDays} days ago`;
+  //   // if date is less than 2 months ago show "x weeks ago"
+  // } else if (diffDays < 60) {
+  //   items.date = `${Math.ceil(diffDays / 7)} weeks ago`;
+
+  //   // if date is less than 4 months ago show "x months ago"
+  // } else if (diffDays < 120) {
+  //   items.date = `${Math.ceil(diffDays / 30)} months ago`;
+  // } else {
+  //   items.date = date.toLocaleDateString('en-US', {
+  //     day: 'numeric',
+  //     month: 'long',
+  //     year: 'numeric',
+  //   });
+  // }
+
   return items;
 }
 
@@ -41,5 +64,27 @@ export function getAllPosts(fields: string[] = []): PostItems[] {
     .map((slug) => getPostBySlug(slug, fields))
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+
+  // after sorting, format dates
+  posts.forEach((post) => {
+    const date = new Date(post.date);
+    const now = new Date();
+    const diff = Math.abs(now.getTime() - date.getTime());
+    const diffDays = Math.ceil(diff / (1000 * 3600 * 24));
+
+    if (diffDays < 14) {
+      post.date = `${diffDays} days ago`;
+
+    } else if (diffDays < 60) {
+      post.date = `${Math.ceil(diffDays / 7)} weeks ago`;
+    } else {
+      post.date = date.toLocaleDateString('en-US', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+      });
+    }
+  });
+
   return posts;
 }

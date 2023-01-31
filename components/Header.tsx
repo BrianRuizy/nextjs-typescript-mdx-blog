@@ -1,5 +1,4 @@
 import React from 'react';
-import Container from './Container';
 
 const Header = ({
   title,
@@ -18,23 +17,25 @@ const Header = ({
   else if (hour === 23 || hour < 5) greet = 'Hello, night owl';
 
   return (
-    <Container>
-      <header>
-        <div className="flex justify-between items-end">
-          <div>
-            <p className="uppercase tracking-tight text-slate-500 text-xs md:text-sm font-medium">
-              {description ? description : greet}
-            </p>
-            <h1 className="text-4xl font-bold tracking-tight">{title}</h1>
-          </div>
-          <div
-            className="rounded-full w-10 h-10  bg-cover bg-center bg-slate-100 dark:bg-slate-700"
-            style={{ backgroundImage: 'url(images/portrait.png)' }}
-          ></div>
+    <header className="container max-w-6xl mx-auto px-5">
+      <div className="flex justify-between items-end">
+        <div>
+          <p className="uppercase tracking-tight text-neutral-500 text-sm font-medium">
+            {description ? description : greet}
+          </p>
+          <h1 className="text-4xl font-extrabold">{title}</h1>
         </div>
-        <hr className="divide mt-2 border-slate-900/10 dark:border-slate-300/10"></hr>
-      </header>
-    </Container>
+
+        {/* if title is home then show portrait image */}
+        {title === 'Home' && (
+          <div
+            className="rounded-full w-9 h-9 md:w-10 md:h-10 bg-cover bg-center bg-blue-200 dark:bg-purple-300"
+            style={{ backgroundImage: 'url(/images/portrait.png)' }}
+          />
+        )}
+      </div>
+      <hr className="divide my-2 border-neutral-200 dark:border-neutral-800"></hr>
+    </header>
   );
 };
 
